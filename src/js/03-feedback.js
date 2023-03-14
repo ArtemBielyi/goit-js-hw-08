@@ -29,6 +29,10 @@ form.addEventListener('submit', event => {
     email: emailInput.value,
     message: messageInput.value,
   };
+
+  if (emailInput.value === '' || messageInput.value === '') {
+    return alert('Заповніть всі поля!');
+  }
   localStorage.removeItem('feedback-form-state');
   event.target.reset();
   console.log(feedback);
